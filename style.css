@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Ensure you link a Poppins font if not already done in HTML */
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background: #1f242d; /* Dark background color */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin-left: 0;
+}
+
+.navbar ul li {
+    margin-left: 25px;
+}
+
+.navbar ul li a{
+    font-size:20px;
+    font-weight:500;
+    transition: .5s ;
+}
+
+.navbar ul li:hover a,
+.navbar ul li.active a
+
+{
+    color:#7cf03d; /* Green color for active/hover */
+}
+
+.home{
+    display: flex;
+    justify-content: space-between; /* Added to space out info and image */
+    align-items: center;
+    height:100vh;
+    padding:60px 9% 0;
+    color:#fff;
+}
+
+.home-info {
+    max-width: 50%; /* Limit width for text section */
+}
+
+.home-info h1{
+    font-size:45px ;
+}
+
+.home-info h2{
+    font-size: 25px;
+    margin-top:8px;
+}
+
+.home-info p{
+    font-size: 16px;
+    margin:10px 0 25px;
+}
+
+.home-info .btn-sci{
+    display:flex;
+    align-items: center;
+}
+
+.btn{
+    display:inline-block ;
+    padding: 10px 30px;
+    background: #7cf03d;
+    border:2px solid #7cf03d; /* Corrected typo 'soild' to 'solid' */
+    border-radius: 40px;
+    box-shadow: 0 0 10px #7cf03d;
+    font-size: 16px;
+    color:#1f242d;
+    font-weight:600 ;
+    transition: .5s; /* Added transition for smooth hover */
+}
+
+.btn:hover{
+    background: transparent;
+    color:#7cf03d;
+    box-shadow: 0 0 20px #7cf03d; /* Increased shadow on hover */
+}
+
+/* --- IMAGE SECTION CORRECTIONS --- */
+
+.home-img {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img .img-box {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: conic-gradient(#00ff00 0deg, #00ff00 140deg, #ff0000 140deg, #ff0000 360deg);
+  /* creates green to red circular ring */
+}
+
+/* Inner dark circle (where the photo sits) */
+.home-img .img-box::before {
+  content: '';
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: #1f242d;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* The profile image */
+.home-img .img-item {
+  position: relative;
+  z-index: 2;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.home-img .img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
